@@ -1,0 +1,20 @@
+export const getDay = (number: number) => number === 0 ? "Sun"
+    : number === 1 ? "Mon"
+        : number === 2 ? "Tue"
+            : number === 3 ? "Wed"
+                : number === 4 ? "Thu"
+                    : number === 5 ? "Fri"
+                        : "Sat";
+
+export const getMonth = (number: number) => number === 0 ? "Jun"
+    : number === 1 ? "Feb"
+        : number === 2 ? "Mar"
+            : number === 3 ? "Apr"
+                : number === 4 ? "May"
+                    : number === 5 ? "Jun"
+                        : number === 6 ? "Jul"
+                            : number === 7 ? "Aug"
+                                : number === 8 ? "Sep"
+                                    : number === 9 ? "Oct"
+                                        : number === 10 ? "Nov"
+                                            : "Dec";
