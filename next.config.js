@@ -2,15 +2,16 @@
 
 module.exports = {
     images: {
-        domains: ["https://www.cdn.weatherapi.com"],
+        domains: ["cdn.weatherapi.com"],
         remotePatterns: [
             {
                 protocol: 'https',
-                hostname: 'www.cdn.weatherapi.com',
+                hostname: 'cdn.weatherapi.com',
                 port: '',
                 pathname: '/**',
             },
         ],
+        unoptimized: true
     },
     experimental: {
         appDir: true
