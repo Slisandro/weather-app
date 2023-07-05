@@ -2,11 +2,11 @@
 
 module.exports = {
     images: {
-        domains: ["https://cdn.weatherapi.com"],
+        domains: ["https://www.cdn.weatherapi.com"],
         remotePatterns: [
             {
                 protocol: 'https',
-                hostname: 'cdn.weatherapi.com',
+                hostname: 'www.cdn.weatherapi.com',
                 port: '',
                 pathname: '/**',
             },
