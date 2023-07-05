@@ -2,6 +2,7 @@
 import AdditionalData from '@/components/additional-data';
 import Forecast from '@/components/forecast';
 import Header from '@/components/header';
+import useDeviceSize from '@/hooks/use-device-size';
 import { useStore } from '@/store/store';
 import ResponseForecast from '@/types/response-forecast';
 import { isFavorite } from '@/utils/favoite';
@@ -9,6 +10,7 @@ import { useEffect, useState } from 'react';
 
 export default function Home({ forecast }: { forecast: ResponseForecast }) {
     const [degress, setDegress] = useState("searchbar");
+    const [width] = useDeviceSize();
     const { setCurrent, favorites, addFavorite, deleteFavorite, current } = useStore(s => s);
     // @ts-ignore
     const handleClick = (e) => setDegress(e.target.id);
@@ -26,8 +28,8 @@ export default function Home({ forecast }: { forecast: ResponseForecast }) {
     return (
         <div className="relative w-full h-full flex flex-col lg:flex-row bg-[#100e1d] pb-8 lg:pb-0">
             <Header degress={degress} toFavorite={() => setDegress("favorites")} />
-            <section className="bg-[#100e1d] min-h-[90vh] lg:min-h-[100vh] flex flex-col py-4 pt-8" style={{ width: window.innerWidth >= 800 ? "calc(100% - 20rem)" : "100%" }}>
-                <div className="flex gap-4 px-4 mb-8 justify-end ml-auto" style={{ display: window.innerWidth >= 800 ? "flex" : "none" }}>
+            <section className="bg-[#100e1d] min-h-[90vh] lg:min-h-[100vh] flex flex-col py-4 pt-8" style={{ width: width >= 800 ? "calc(100% - 20rem)" : "100%" }}>
+                <div className="flex gap-4 px-4 mb-8 justify-end ml-auto" style={{ display: width >= 800 ? "flex" : "none" }}>
                     <button
                         id="celsius"
                         style={{ boxShadow: "rgba(0, 0, 0, 0.5) 5px 5px 2px", border: degress === "fahrenheit" ? "1px #e7e7eb solid" : "" }}

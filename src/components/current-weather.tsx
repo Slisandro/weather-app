@@ -1,9 +1,11 @@
+import useDeviceSize from "@/hooks/use-device-size";
 import { useStore } from "@/store/store";
 import { changeURL, getDate } from "@/utils/string";
 import Image from "next/image";
 
 export default function CurrentWeather({ degress }: { degress: string }) {
     const { current } = useStore(s => s);
+    const [width] = useDeviceSize();
     return (
         <div
             style={{ height: "calc(100% - 6rem" }}
@@ -13,8 +15,8 @@ export default function CurrentWeather({ degress }: { degress: string }) {
                 src={current ? changeURL("https://" + current?.current.condition.icon) : ""}
                 alt="icon_weather"
                 className="mx-auto shadow my-12 bg-[rgba(0,0,0,.5)] pt-8 lg-pt-0"
-                width={window.innerWidth >= 800 ? 128 : 200}
-                height={window.innerWidth >= 800 ? 128 : 200}
+                width={width >= 800 ? 128 : 200}
+                height={width >= 800 ? 128 : 200}
             />
             <p className="font-medium text-[5rem] lg:text-4xl text-[#e7e7eb] text-center">
                 <span className="font-black text-[7rem] lg:text-6xl mr-1">

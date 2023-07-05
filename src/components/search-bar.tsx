@@ -1,6 +1,7 @@
+"use client"
+import useDeviceSize from "@/hooks/use-device-size";
 import { useStore } from "@/store/store";
 import ResponseForecast from "@/types/response-forecast";
-import { isFavorite } from "@/utils/favoite";
 import { getCurrentPosition } from "@/utils/position";
 import axios from "axios";
 import { useState } from "react";
@@ -8,7 +9,7 @@ import { useState } from "react";
 
 export default function SearchBar({ handleSearchbar, toFavorite }: { handleSearchbar: (e: string) => void; toFavorite: () => void; }) {
     const { setCurrent, current, addFavorite, favorites, deleteFavorite } = useStore(s => s);
-
+    const [width] = useDeviceSize();
     const [degress, setDegress] = useState("celsius")
     const addToFavorites = () => {
         if (current) {
@@ -38,13 +39,13 @@ export default function SearchBar({ handleSearchbar, toFavorite }: { handleSearc
         <div className="w-full fixed top-0 left-0 lg:relative p-8 bg-[rgba(0,0,0,.75)] lg:bg-transparent h-[8rem] lg:px-0 lg:py-4 flex justify-between pt-8 lg:h-[6rem] items-center">
             {/* @ts-ignore */}
             <button id="searchbar" onClick={e => handleSearchbar("searchbar")} className="bg-[#6e707a] p-4 lg:p-2 text-white shadow text-[#e7e7eb] w-[max-content] rounded-full lg:rounded-none lg:h-[max-content]">
-                {window.innerWidth >= 800 ? "Search" : (
+                {width >= 800 ? "Search" : (
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
                         <path fillRule="evenodd" d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z" clipRule="evenodd" />
                     </svg>
                 )}
             </button>
-            <div className="flex gap-4" style={{ display: window.innerWidth >= 800 ? "none" : "flex" }}>
+            <div className="flex gap-4" style={{ display: width >= 800 ? "none" : "flex" }}>
                 <button
                     id="celsius"
                     style={{ boxShadow: "rgba(0, 0, 0, 0.5) 5px 5px 2px" }}

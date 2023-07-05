@@ -1,9 +1,12 @@
+"use client"
+import useDeviceSize from "@/hooks/use-device-size";
 import { useStore } from "@/store/store";
 import { changeURL, getDate } from "@/utils/string";
 import Image from "next/image";
 
 export default function Forecast({ degress }: { degress: string }) {
     const current = useStore(s => s.current);
+    const [width] = useDeviceSize();
 
     return (
         <>
@@ -15,8 +18,8 @@ export default function Forecast({ degress }: { degress: string }) {
                             <p className="text-[#e7e7eb] font-semibold text-4xl lg:text-xl">{i === 0 ? "Tomorrow" : getDate(forecast.date)}</p>
                             <Image
                                 src={changeURL("https://" + forecast.day.condition.icon)}
-                                width={window.innerWidth >= 800 ? 90 : 125}
-                                height={window.innerWidth >= 800 ? 90 : 125}
+                                width={width >= 800 ? 90 : 125}
+                                height={width >= 800 ? 90 : 125}
                                 alt="icon_forecast"
                             />
                             <div className="flex items-center justify-between mx-4 gap-4 mt-8 lg:mt-0">

@@ -4,7 +4,7 @@ export default function AdditionalData() {
     const { current } = useStore(s => s);
     return (
         <div className="w-full px-4 lg:px-32 pt-8 gap-8 flex flex-col pb-8 lg:pb-0">
-            <p className="text-[#e7e7eb] text-4xl lg:text-2xl font-semibold text-start">Today's Hightlights</p>
+            <p className="text-[#e7e7eb] text-4xl lg:text-2xl font-semibold text-start">Toda&apos;s Hightlights</p>
             <div className="flex flex-col gap-8 md:gap-0 mx-8 md:mx-0 md:flex-row w-auto md:w-full justify-around">
                 <div style={{ boxShadow: "5px 5px 2px rgba(0,0,0,.5)" }} className="w-auto md-[45%] lg:w-1/3 bg-[#1e213a] flex items-center justify-center flex-col p-8 lg:p-4 gap-8 md:gap-4 h-[max-content]">
                     <p className="text-[#e7e7eb] text-4xl lg:text-large font-semibold">Wind Status</p>
