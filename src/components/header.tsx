@@ -56,7 +56,7 @@ export default function Header({ degress }: { degress: string }) {
                                 viewBox="0 0 24 24"
                                 strokeWidth={1.5}
                                 stroke="currentColor"
-                                className="w-[2rem] h-[2rem] lg:w-full lg:h-auto text-[#e7e7eb]"
+                                className="w-6 h-6 lg:w-full lg:h-auto text-[#e7e7eb]"
                             >
                                 <path
                                     strokeLinecap="round"
@@ -88,24 +88,45 @@ export default function Header({ degress }: { degress: string }) {
                                 viewBox="0 0 24 24"
                                 strokeWidth={1.5}
                                 stroke="currentColor"
-                                className="w-[2rem] h-[2rem] lg:w-full lg:h-auto text-[#e7e7eb]"
+                                className="w-6 h-6 lg:w-full lg:h-auto text-[#e7e7eb]"
                             >
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="M6 18L18 6M6 6l12 12"
+                                />
                             </svg>
                         </button>
-                        <Form value={input} onChange={onChange} onSubmit={onSubmit} />
-                        <Result handleBack={onBack} input={label} />
+                        <Form
+                            value={input}
+                            onChange={onChange}
+                            onSubmit={onSubmit}
+                        />
+                        <Result
+                            handleBack={onBack}
+                            input={label}
+                        />
                     </div>
                 ) : state === "favorites" ? (
                     <div
-                        className="w-full z-[100] h-full pt-8 lg:pt-8 bg-[rgba(0,0,0,.95)] fixed lg:relative py-2 px-4 lg:px-8"
+                        className="w-full z-[100] h-full pt-8 lg:pt-8 bg-[rgba(0,0,0,.95)] fixed lg:relative py-2 px-8 lg:px-8"
                     >
                         <button
                             onClick={() => setState("current")}
                             className="w-[max-content] h-auto lg-w-[max-content] lg:h-auto ml-auto lg:ml-0 bg-[#6e707a] shadow p-2 rounded-full mb-4 lg:mb-8"
                         >
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-[2rem] h-[2rem] lg:w-6 lg:h-6 text-[#e7e7eb]">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth={1.5}
+                                stroke="currentColor" className="w-6 h-6 text-[#e7e7eb]"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="M6 18L18 6M6 6l12 12"
+                                />
                             </svg>
                         </button>
                         <FavoriteList onBack={onBack} />

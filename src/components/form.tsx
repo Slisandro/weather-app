@@ -7,20 +7,20 @@ export default function Form({ value, onChange, onSubmit }: { value: string; onC
         >
             <input
                 style={{ boxShadow: "5px 5px 2px rgba(0,0,0,.5)" }}
-                className="w-5/6 px-4 lg:px-8 lg:text-xl py-4 lg:px-[.75rem] lg:py-[.75rem] rounded-md text-2xl"
+                className="w-2/3 px-4 lg:px-8 lg:text-xl py-2 lg:px-[.75rem] lg:py-[.75rem] rounded-md text-1xl"
                 placeholder="Search..."
                 value={value}
                 onChange={onChange}
             />
             <button
                 onClick={onSubmit}
-                className="w-[max-content] bg-[#100e1d] rounded-md p-4 lg:p-2 text-[#e7e7eb]"
+                className="w-[max-content] bg-[#100e1d] rounded-md p-2 lg:p-2 text-[#e7e7eb]"
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                     fill="currentColor"
-                    className="w-[2rem] h-[2rem] lg:w-6 lg:h-6  text-[#e7e7eb]"
+                    className="w-6 h-6 text-[#e7e7eb]"
                 >
                     <path
                         fillRule="evenodd"
