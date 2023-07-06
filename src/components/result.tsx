@@ -17,15 +17,16 @@ export default function Result({ input, handleBack }: { input: string, handleBac
             return addFavorite(fav);
         }
     }
+
     return (
         <div className="w-full mt-8">
-            <p className="font-semibold text-4xl lg:text-xl text-[#e7e7eb]">
+            <p className="font-semibold text-3xl lg:text-xl text-[#e7e7eb]">
                 Results of {input}
             </p>
             <ul className="w-full p-0 flex flex-col gap-8 lg:py-4">
                 {result.length ?
                     result.map((item) => (
-                        <li key={item.location.name} className="flex w-full h-[max-content] my-4 shadow p-4 lg:p-0 flex-col justify-start items-start gap-4">
+                        <li key={item.location.name} className="flex w-full h-[max-content] my-4 shadow p-2 lg:p-0 flex-col justify-start items-start gap-2 lg:gap-4">
                             <p className="font-xl text-2xl lg:text-base text-[#e7e7eb]">{item.location.name}</p>
                             <p className="font-medium flex flex-col gap-4 text-[#e7e7eb] text-2xl lg:text-base">
                                 {item.location.country}

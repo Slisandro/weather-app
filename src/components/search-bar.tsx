@@ -6,7 +6,6 @@ import { getCurrentPosition } from "@/utils/position";
 import axios from "axios";
 import { useState } from "react";
 
-
 export default function SearchBar({ handleSearchbar, toFavorite }: { handleSearchbar: (e: string) => void; toFavorite: () => void; }) {
     const { setCurrent, current, addFavorite, favorites, deleteFavorite } = useStore(s => s);
     const [width] = useDeviceSize();

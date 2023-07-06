@@ -9,7 +9,7 @@ import SearchBar from "./search-bar";
 import ResponseForecast from "@/types/response-forecast";
 import FavoriteList from "./favorite-list";
 
-export default function Header({ degress, toFavorite }: { degress: string, toFavorite: () => void; }) {
+export default function Header({ degress }: { degress: string }) {
     const { setResult } = useStore(s => s);
     const [state, setState] = useState("current");
     const [input, setInput] = useState("");
@@ -34,23 +34,60 @@ export default function Header({ degress, toFavorite }: { degress: string, toFav
             {
                 state === "current" ? (
                     <div className="w-full h-full pt-[15%]  lg:pt-8 lg:px-8">
-                        <SearchBar toFavorite={() => setState("favorites")} handleSearchbar={handleSearchbar} />
-                        <CurrentWeather degress={degress} />
+                        <SearchBar
+                            toFavorite={() => setState("favorites")}
+                            handleSearchbar={handleSearchbar}
+                        />
+                        <CurrentWeather
+                            degress={degress}
+                        />
                     </div>
                 ) : state === "searchbar" ? (
-                    <div className="w-full h-full pt-[15%] lg:pt-8 bg-[rgba(0,0,0,.95)] fixed lg:relative p-8 lg:px-8">
-                        <button onClick={() => setState("current")} className="w-[3rem] h-auto lg-w-[max-content] lg:h-auto ml-auto lg:ml-0 bg-[#6e707a] shadow p-2 rounded-full mb-8">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-[2rem] h-[2rem] lg:w-full lg:h-auto text-[#e7e7eb]">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    <div
+                        className="w-full z-[100] h-full pt-8 lg:pt-8 bg-[rgba(0,0,0,.95)] fixed lg:relative py-2 px-4 lg:px-8"
+                    >
+                        <button
+                            onClick={() => setState("current")}
+                            className="w-[max-content] h-auto lg-w-[max-content] lg:h-auto ml-auto lg:ml-0 bg-[#6e707a] shadow p-2 rounded-full mb-4 lg:mb-8"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth={1.5}
+                                stroke="currentColor"
+                                className="w-[2rem] h-[2rem] lg:w-full lg:h-auto text-[#e7e7eb]"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="M6 18L18 6M6 6l12 12"
+                                />
                             </svg>
                         </button>
-                        <Form value={input} onChange={onChange} onSubmit={onSubmit} />
-                        <Favorite onBack={onBack} />
+                        <Form
+                            value={input}
+                            onChange={onChange}
+                            onSubmit={onSubmit}
+                        />
+                        <Favorite
+                            onBack={onBack}
+                        />
                     </div>
                 ) : state === "result" ? (
-                    <div className="w-full h-full pt-[15%] lg:pt-8 bg-[rgba(0,0,0,.95)] fixed lg:relative p-8 lg:px-8">
-                        <button onClick={onBack} className="w-[3rem] h-auto lg-w-[max-content] lg:h-auto ml-auto lg:ml-0 bg-[#6e707a] shadow p-2 rounded-full mb-8">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-[2rem] h-[2rem] lg:w-full lg:h-auto text-[#e7e7eb]">
+                    <div className="w-full z-[100] h-full pt-8 lg:pt-8 bg-[rgba(0,0,0,.95)] fixed lg:relative py-2 px-4 lg:px-8">
+                        <button
+                            onClick={onBack} 
+                            className="w-[max-content] h-auto lg-w-[max-content] lg:h-auto ml-auto lg:ml-0 bg-[#6e707a] shadow p-2 rounded-full mb-8"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth={1.5}
+                                stroke="currentColor"
+                                className="w-[2rem] h-[2rem] lg:w-full lg:h-auto text-[#e7e7eb]"
+                            >
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                             </svg>
                         </button>
@@ -58,8 +95,8 @@ export default function Header({ degress, toFavorite }: { degress: string, toFav
                         <Result handleBack={onBack} input={label} />
                     </div>
                 ) : state === "favorites" ? (
-                    <div className="w-full h-full favorites pt-[15%] lg:pt-0 bg-[rgba(0,0,0,.95)] fixed lg:relative p-8 lg:p-0">    
-                        <button onClick={() => setState("current")} className="w-[3rem] h-auto lg-w-[max-content] ml-auto bg-[#6e707a] shadow p-2 rounded-full mb-8">
+                    <div className="w-full h-full favorites pt-[15%] lg:pt-0 bg-[rgba(0,0,0,.95)] fixed lg:relative p-2 lg:p-0">
+                        <button onClick={() => setState("current")} className="w-[max-content] h-auto lg-w-[max-content] ml-auto bg-[#6e707a] shadow p-2 rounded-full mb-8">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-[2rem] h-[2rem] lg:w-6 lg:h-6 text-[#e7e7eb]">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                             </svg>
