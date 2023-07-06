@@ -28,7 +28,7 @@ export default function Home({ forecast }: { forecast: ResponseForecast }) {
     
     return (
         <div className="relative w-full h-full flex flex-col lg:flex-row bg-[#100e1d] pb-8 lg:pb-0">
-            <Header degress={degress} toFavorite={() => setDegress("favorites")} />
+            <Header degress={degress} />
             <section className="bg-[#100e1d] min-h-[90vh] lg:min-h-[100vh] flex flex-col py-4 pt-8" style={{ width: width >= 800 ? "calc(100% - 20rem)" : "100%" }}>
                 <div className="flex gap-4 px-4 mb-8 justify-end ml-auto" style={{ display: width >= 800 ? "flex" : "none" }}>
                     <button

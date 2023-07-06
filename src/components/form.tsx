@@ -3,7 +3,7 @@ import { useState } from "react"
 export default function Form({ value, onChange, onSubmit }: { value: string; onChange: any; onSubmit: any; }) {
     return (
         <form
-            className="w-full flex items-center justify-around lg:justify-start gap-4 px-0 mb-20 mt-4 lg:mt-0 lg:mb-0"
+            className="w-full flex items-center justify-around lg:justify-start gap-4 px-0 my-8 lg:mb-0"
         >
             <input
                 style={{ boxShadow: "5px 5px 2px rgba(0,0,0,.5)" }}

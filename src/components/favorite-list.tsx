@@ -23,14 +23,20 @@ export default function FavoriteList({ onBack }: { onBack: () => void; }) {
             <p className="font-semibold text-4xl lg:text-xl text-[#e7e7eb]">Favorites</p>
             <ul className="w-full p-0 flex flex-col gap-8">
                 {favorites.length ? favorites.map((item) => (
-                    <li key={item.location.name} className="flex w-full h-[max-content] my-4 shadow p-4 flex-col justify-start items-start gap-4">
-                        <p className="font-xl text-2xl lg:text-medium text-[#e7e7eb]">{item.location.name}</p>
-                        <p className="font-medium flex flex-col lg:flex-row gap-4 lg:gap-0 text-[#e7e7eb] text-2xl lg:text-medium">
-                            {item.location.country}
+                    <li
+                        key={item.location.name}
+                        className="flex w-full h-[max-content] my-4 shadow p-2 lg:p-0 flex-col justify-start items-start gap-2 lg:gap-4 ml-2 lg:ml-0"
+                    >
+                        <p className="font-xl text-2xl lg:text-base text-[#e7e7eb]">
+                            {item.location.name} - {item.location.country}
+                        </p>
+                        <span
+                            className="font-medium flex flex-col gap-4 text-[#e7e7eb] lg:text-base text-small font-light"
+                        >
                             <small className="text-small font-light">
                                 {`(${item.location.lat},${item.location.lon})`}
                             </small>
-                        </p>
+                        </span>
                         <div className="flex gap-4 lg:gap-2">
                             <button onClick={() => handleFavorite(item)} className="bg-[#6e707a] p-4 lg:p-2 shadow rounded-full">
                                 {isFavorite(favorites, current) ? (
