@@ -9,8 +9,8 @@ import SearchBar from "./search-bar";
 import ResponseForecast from "@/types/response-forecast";
 import FavoriteList from "./favorite-list";
 
-export default function Header({ degress }: { degress: string }) {
-    const { setResult } = useStore(s => s);
+export default function Header() {
+    const { setResult, degress } = useStore(s => s);
     const [state, setState] = useState("current");
     const [input, setInput] = useState("");
     const [label, setLabel] = useState("");
@@ -38,9 +38,7 @@ export default function Header({ degress }: { degress: string }) {
                             toFavorite={() => setState("favorites")}
                             handleSearchbar={handleSearchbar}
                         />
-                        <CurrentWeather
-                            degress={degress}
-                        />
+                        <CurrentWeather />
                     </div>
                 ) : state === "searchbar" ? (
                     <div

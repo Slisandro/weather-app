@@ -1,15 +1,11 @@
 "use client"
-import useDeviceSize from "@/hooks/use-device-size";
 import { useStore } from "@/store/store";
 import ResponseForecast from "@/types/response-forecast";
 import { getCurrentPosition } from "@/utils/position";
 import axios from "axios";
-import { useState } from "react";
 
 export default function SearchBar({ handleSearchbar, toFavorite }: { handleSearchbar: (e: string) => void; toFavorite: () => void; }) {
-    const { setCurrent, current, addFavorite, favorites, deleteFavorite } = useStore(s => s);
-    const [width] = useDeviceSize();
-    const [degress, setDegress] = useState("celsius")
+    const { setCurrent, current, setDegress, degress, addFavorite, favorites, deleteFavorite } = useStore(s => s);
     const addToFavorites = () => {
         if (current) {
             const isSelect = favorites.findIndex(x => x.location.name === current.location.name);

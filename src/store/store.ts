@@ -4,6 +4,7 @@ import { create } from "zustand";
 // export interface Result { id: number, name: string }
 
 interface Store {
+    degress: "celsius" | "fahrenheit",
     current: ResponseForecast | null,
     favorites: ResponseForecast[],
     result: ResponseForecast[],
@@ -11,9 +12,11 @@ interface Store {
     setResult: (c: ResponseForecast[]) => void;
     addFavorite: (c: ResponseForecast) => void;
     deleteFavorite: (c: ResponseForecast[]) => void;
+    setDegress: (c: "celsius" | "fahrenheit") => void;
 }
 
 export const useStore = create<Store>((set) => ({
+    degress: "celsius",
     current: null,
     favorites: [],
     result: [],
@@ -35,5 +38,9 @@ export const useStore = create<Store>((set) => ({
     deleteFavorite: (favorites: ResponseForecast[]) => set((state) => ({
         ...state,
         favorites: favorites
+    })),
+    setDegress: (s: "celsius" | "fahrenheit") => set((state) => ({
+        ...state,
+        degress: s
     }))
 }))

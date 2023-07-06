@@ -4,8 +4,8 @@ import { useStore } from "@/store/store";
 import { changeURL, getDate } from "@/utils/string";
 import Image from "next/image";
 
-export default function Forecast({ degress }: { degress: string }) {
-    const current = useStore(s => s.current);
+export default function Forecast() {
+    const { current, degress } = useStore(s => s);
     const [width] = useDeviceSize();
 
     return (

@@ -3,8 +3,8 @@ import { useStore } from "@/store/store";
 import { changeURL, getDate } from "@/utils/string";
 import Image from "next/image";
 
-export default function CurrentWeather({ degress }: { degress: string }) {
-    const { current } = useStore(s => s);
+export default function CurrentWeather() {
+    const { current, degress } = useStore(s => s);
     const [width] = useDeviceSize();
     return (
         <div
