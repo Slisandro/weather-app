@@ -30,7 +30,7 @@ export default function Header({ degress, toFavorite }: { degress: string, toFav
     };
 
     return (
-        <header className="min-w-[100%] lg:min-w-[20rem] lg:max-w-[20rem] min-h-[100vh] h-full bg-[#1e213a] border-none" >
+        <header className="max-h-[100vh] lg:min-w-[20rem] lg:max-w-[20rem] min-h-[100vh] h-full bg-[#1e213a] border-none" >
             {
                 state === "current" ? (
                     <div className="w-full h-full pt-[15%]  lg:pt-8 lg:px-8">

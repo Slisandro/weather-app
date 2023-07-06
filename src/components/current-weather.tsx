@@ -8,30 +8,30 @@ export default function CurrentWeather({ degress }: { degress: string }) {
     const [width] = useDeviceSize();
     return (
         <div
-            style={{ height: "calc(100% - 6rem" }}
+            style={{ height: "calc(100vh - 8rem" }}
             className="w-full justify-between flex flex-col py-8"
         >
             <Image
                 src={current ? changeURL("https://" + current?.current.condition.icon) : ""}
                 alt="icon_weather"
-                className="mx-auto shadow my-12 bg-[rgba(0,0,0,.5)] pt-8 lg-pt-0"
-                width={width >= 800 ? 128 : 200}
-                height={width >= 800 ? 128 : 200}
+                className="mx-auto shadow my-12 bg-[rgba(0,0,0,.5)] px-2 lg-pt-0"
+                width={128}
+                height={128}
             />
-            <p className="font-medium text-[5rem] lg:text-4xl text-[#e7e7eb] text-center">
-                <span className="font-black text-[7rem] lg:text-6xl mr-1">
+            <p className="font-medium text-3xl lg:text-4xl text-[#e7e7eb] text-center">
+                <span className="font-black text-6xl lg:text-6xl mr-1">
                     {degress === "celsius" ? current?.current.temp_c : current?.current.temp_f}
                 </span>
                 {degress === "celsius" ? "°c" : "°F"}
             </p>
-            <p className="font-medium text-[4rem] lg:text-xl text-[#e7e7eb] text-center">
+            <p className="font-medium text-2xl lg:text-xl text-[#e7e7eb] text-center">
                 {current?.current.condition.text}
             </p>
-            <p className="font-medium text-[2rem] lg:text-xl text-[#e7e7eb] text-center">
+            <p className="font-medium text-xl lg:text-xl text-[#e7e7eb] text-center">
                 Today&nbsp;·&nbsp;
                 {getDate(current?.current.last_updated ?? "")}
             </p>
-            <p className="font-medium text-[2rem] lg:text-xl text-[#e7e7eb] text-center flex items-center justify-center gap-4">
+            <p className="font-medium text-xl lg:text-xl text-[#e7e7eb] text-center flex items-center justify-center gap-4">
                 <svg
                     className="fill-[#e7e7eb] relative"
                     xmlns="http://www.w3.org/2000/svg"

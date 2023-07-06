@@ -1,5 +1,4 @@
 import Home from '@/layouts/home';
-import { useStore } from '@/store/store';
 import axios from 'axios';
 
 const fetchForecast = async () => {
@@ -15,7 +14,7 @@ export default async function App() {
   const forecast = await fetchForecast();
 
   return (
-    <main className="flex h-screen w-screen items-center justify-between">
+    <main className="flex h-screen w-screen items-center justify-between max-w-[100vw] lg:max-w-[98vw] max-h-[max-content] lg:max-h-[100vh]">
       <Home forecast={forecast} />
     </main>
   )
