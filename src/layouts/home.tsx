@@ -25,12 +25,12 @@ export default function Home({ forecast }: { forecast: ResponseForecast }) {
             }
         }
     }
-    
+
     return (
-        <div className="relative w-full h-full flex flex-col lg:flex-row bg-[#100e1d] pb-8 lg:pb-0">
-            <Header degress={degress} />
-            <section className="bg-[#100e1d] min-h-[90vh] lg:min-h-[100vh] flex flex-col py-4 pt-8" style={{ width: width >= 800 ? "calc(100% - 20rem)" : "100%" }}>
-                <div className="flex gap-4 px-4 mb-8 justify-end ml-auto" style={{ display: width >= 800 ? "flex" : "none" }}>
+        <div className="relative w-full h-full flex bg-[#100e1d] pb-8 lg:pb-0" style={{ flexDirection: width >= 800 ? "row" : "column" }}>
+            <Header />
+            <section className="bg-[#100e1d] min-h-[90vh] lg:min-h-[100vh] flex flex-col lg:flex-row py-4">
+                <div className="flex gap-4 px-4 mb-8 justify-end ml-auto hidden lg:flex mt-4" style={{ display: width >= 800 ? "flex" : "none" }}>
                     <button
                         id="celsius"
                         style={{ boxShadow: "rgba(0, 0, 0, 0.5) 5px 5px 2px", border: degress === "fahrenheit" ? "1px #e7e7eb solid" : "" }}
@@ -56,7 +56,7 @@ export default function Home({ forecast }: { forecast: ResponseForecast }) {
                         °&nbsp;F
                     </button>
                 </div>
-                <Forecast degress={degress} />
+                <Forecast />
                 <AdditionalData />
             </section>
             <button style={{ bottom: "1rem", right: "1rem" }} className="bg-[#100e1d] fixed flex lg:hidden p-2 h-[max-content] shadow rounded-full" onClick={addToFavorites}>
