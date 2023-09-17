@@ -12,8 +12,7 @@ export default function Home({ forecast }: { forecast: ResponseForecast }) {
     const [degress, setDegress] = useState("searchbar");
     const [width] = useDeviceSize();
     const { setCurrent, favorites, addFavorite, deleteFavorite, current } = useStore(s => s);
-    // @ts-ignore
-    const handleClick = (e) => setDegress(e.target.id);
+    const handleClick = (e: any) => setDegress(e.target.id);
     useEffect(() => { setCurrent(forecast) }, []);
     const addToFavorites = () => {
         if (current) {
@@ -27,10 +26,10 @@ export default function Home({ forecast }: { forecast: ResponseForecast }) {
     }
 
     return (
-        <div className="relative w-full h-full flex bg-[#100e1d] pb-8 lg:pb-0" style={{ flexDirection: width >= 800 ? "row" : "column" }}>
+        <div className="relative w-full h-full flex bg-[#100e1d] pb-8 lg:pb-0" style={{ flexDirection: width >= 1024 ? "row" : "column" }}>
             <Header />
-            <section className="bg-[#100e1d] min-h-[90vh] lg:min-h-[100vh] flex flex-col lg:flex-row py-4">
-                <div className="flex gap-4 px-4 mb-8 justify-end ml-auto hidden lg:flex mt-4" style={{ display: width >= 800 ? "flex" : "none" }}>
+            <section style={{ width: width >= 1024 ? "calc(100% - 20rem)" : "100%" }} className="bg-[#100e1d] min-h-[90vh] lg:min-h-[100vh] flex flex-col lg:flex-row py-4">
+                <div className="flex gap-4 px-4 mb-8 justify-end ml-auto hidden lg:flex mt-4" style={{ display: width >= 1024 ? "flex" : "none" }}>
                     <button
                         id="celsius"
                         style={{ boxShadow: "rgba(0, 0, 0, 0.5) 5px 5px 2px", border: degress === "fahrenheit" ? "1px #e7e7eb solid" : "" }}

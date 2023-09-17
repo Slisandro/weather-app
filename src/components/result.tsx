@@ -3,7 +3,7 @@ import ResponseForecast from "@/types/response-forecast";
 import { isFavorite } from "@/utils/favoite";
 
 export default function Result({ input, handleBack }: { input: string, handleBack: () => void }) {
-    const { result, favorites, current, addFavorite, deleteFavorite, setCurrent } = useStore(s => s);
+    const { result, favorites, addFavorite, deleteFavorite, setCurrent } = useStore(s => s);
     const handleClick = (c: ResponseForecast) => {
         setCurrent(c);
         handleBack();

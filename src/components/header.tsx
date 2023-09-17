@@ -30,10 +30,10 @@ export default function Header() {
     };
 
     return (
-        <header className="max-h-[100vh] lg:min-w-[20rem] lg:max-w-[20rem] min-h-[100vh] h-full bg-[#1e213a] border-none" >
+        <header className="max-h-[100vh] md:min-w-full md:max-w-full lg:min-w-[20rem] lg:max-w-[20rem] min-h-[100vh] h-full bg-[#1e213a] border-none">
             {
                 state === "current" ? (
-                    <div className="w-full h-full pt-[15%]  lg:pt-8 lg:px-8">
+                    <div className="w-full h-full pt-[15%] md:pt-12 lg:pt-8 lg:px-8">
                         <SearchBar
                             toFavorite={() => setState("favorites")}
                             handleSearchbar={handleSearchbar}
@@ -42,7 +42,7 @@ export default function Header() {
                     </div>
                 ) : state === "searchbar" ? (
                     <div
-                        className="w-full z-[100] h-full pt-8 lg:pt-8 bg-[rgba(0,0,0,.95)] fixed lg:relative py-2 px-4 lg:px-8"
+                        className="w-full z-[100] h-full pt-8 md-pt-4 lg:pt-8 bg-[rgba(0,0,0,.95)] fixed lg:relative py-2 px-4 lg:px-8"
                     >
                         <button
                             onClick={() => setState("current")}

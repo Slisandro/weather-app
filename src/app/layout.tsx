@@ -14,8 +14,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" style={{ backgroundColor: "#100e1d"}}>
-      <body className={inter.className}>{children}</body>
+    <html lang="en" style={{ backgroundColor: "#100e1d" }}>
+      <body className={inter.className + ` ${process.env.NODE_ENV === "development" ? "debug-screens" : undefined}`}>
+        {children}
+      </body>
     </html>
   )
 }
