@@ -1,6 +1,7 @@
 import './globals.css';
 import { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import { Metadata } from 'next';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,6 +20,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" style={{ backgroundColor: "#100e1d" }}>
+      <head>
+	<link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
       <body className={inter.className + ` ${process.env.NODE_ENV === "development" ? "debug-screens" : undefined}`}>
         {children}
       </body>
