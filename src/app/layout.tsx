@@ -6,10 +6,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'weather app',
-  description: 'SPA Weather App with geolocation',
-  icons: {
-		shortcut: "/favicon.png",
-	}
+  description: 'SPA Weather App with geolocation'
 }
 
 export default function RootLayout({
@@ -20,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en" style={{ backgroundColor: "#100e1d" }}>
       <head>
-	<link rel="icon" href="/favicon.png" sizes="any" />
+        <link rel="icon" href="/favicon.ico" />
       </head>
       <body className={inter.className + ` ${process.env.NODE_ENV === "development" ? "debug-screens" : undefined}`}>
         {children}
