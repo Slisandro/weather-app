@@ -1,7 +1,7 @@
 "use client"
 import { useStore } from "@/store/store";
 import ResponseForecast from "@/types/response-forecast";
-import { isFavorite } from "@/utils/favoite";
+import { isFavorite } from "@/utils/favorite";
 import { getCurrentPosition } from "@/utils/position";
 import axios from "axios";
 import { toast } from 'react-toastify';

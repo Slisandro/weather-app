@@ -1,6 +1,6 @@
 import { useStore } from "@/store/store"
 import ResponseForecast from "@/types/response-forecast";
-import { isFavorite } from "@/utils/favoite";
+import { isFavorite } from "@/utils/favorite";
 
 export default function Result({ input, handleBack }: { input: string, handleBack: () => void }) {
     const { result, favorites, addFavorite, deleteFavorite, setCurrent } = useStore(s => s);

@@ -5,7 +5,7 @@ import Header from '@/components/header';
 import useDeviceSize from '@/hooks/use-device-size';
 import { useStore } from '@/store/store';
 import ResponseForecast from '@/types/response-forecast';
-import { isFavorite } from '@/utils/favoite';
+import { isFavorite } from '@/utils/favorite';
 import { useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';

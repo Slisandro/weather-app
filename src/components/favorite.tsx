@@ -1,6 +1,6 @@
 import { useStore } from "@/store/store"
 import ResponseForecast from "@/types/response-forecast";
-import { isFavorite } from "@/utils/favoite";
+import { isFavorite } from "@/utils/favorite";
 import { toast } from 'react-toastify';
 
 export default function Favorite({ onBack }: { onBack: () => void; }) {
