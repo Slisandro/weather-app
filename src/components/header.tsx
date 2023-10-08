@@ -46,7 +46,7 @@ export default function Header() {
                     >
                         <button
                             onClick={() => setState("current")}
-                            className="w-[max-content] h-auto lg-w-[max-content] lg:h-auto ml-auto lg:ml-0 bg-[#6e707a] shadow p-2 rounded-full mb-4 lg:mb-8"
+                            className="w-[2rem] h-auto lg-w-[max-content] lg:h-auto ml-auto lg:ml-0 bg-[#6e707a] shadow p-2 rounded-full mb-4 lg:mb-8"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +78,7 @@ export default function Header() {
                     >
                         <button
                             onClick={onBack}
-                            className="w-[max-content] h-auto lg-w-[max-content] lg:h-auto ml-auto lg:ml-0 bg-[#6e707a] shadow p-2 rounded-full mb-4 lg:mb-8"
+                            className="w-[2rem] h-auto lg-w-[max-content] lg:h-auto ml-auto lg:ml-0 bg-[#6e707a] shadow p-2 rounded-full mb-4 lg:mb-8"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -111,7 +111,7 @@ export default function Header() {
                     >
                         <button
                             onClick={() => setState("current")}
-                            className="w-[max-content] h-auto lg-w-[max-content] lg:h-auto ml-auto lg:ml-0 bg-[#6e707a] shadow p-2 rounded-full mb-4 lg:mb-8"
+                            className="w-[2rem] h-auto lg-w-[max-content] lg:h-auto ml-auto lg:ml-0 bg-[#6e707a] shadow p-2 rounded-full mb-4 lg:mb-8"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
