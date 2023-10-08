@@ -15,7 +15,12 @@ export default function Forecast() {
                 {
                     current?.forecast.forecastday.map((forecast, i) => (
                         <div key={forecast.date} style={{ boxShadow: "5px 5px 2px rgba(0,0,0,.5)" }} className="bg-[#1e213a] flex flex-col snap-center items-center justify-between pb-8 pt-8 mb-8 mx-4 w-[25rem] lg:w-[max-content] overflow-x-auto gap-[2rem] h-[max-content] min-w-[18rem] lg:min-w-[13rem] lg:overflow-x-auto lg:max-w-[100%] lg:gap-4">
-                            <p className="text-[#e7e7eb] font-semibold text-2xl lg:text-xl">{i === 0 ? "Tomorrow" : getDate(forecast.date)}</p>
+                            <p className="text-[#e7e7eb] font-semibold text-2xl lg:text-xl">
+                                {
+                                    i === 0 ? "Now" :
+                                        i === 1 ? "Tomorrow" :
+                                            getDate(forecast.date)
+                                }</p>
                             <Image
                                 src={changeURL("https://" + forecast.day.condition.icon)}
                                 width={width >= 1024 ? 90 : 125}
