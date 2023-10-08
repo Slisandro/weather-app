@@ -9,11 +9,13 @@ import { isFavorite } from '@/utils/favoite';
 import { useEffect, useState } from 'react';
 
 export default function Home({ forecast }: { forecast: ResponseForecast }) {
-    const [degress, setDegress] = useState("searchbar");
+    // const [degress, setDegress] = useState("celsius");
     const [width] = useDeviceSize();
-    const { setCurrent, favorites, addFavorite, deleteFavorite, current } = useStore(s => s);
+    const { setCurrent, favorites, addFavorite, deleteFavorite, current, degress, setDegress } = useStore(s => s);
     const handleClick = (e: any) => setDegress(e.target.id);
+
     useEffect(() => { setCurrent(forecast) }, []);
+
     const addToFavorites = () => {
         if (current) {
             const isSelect = favorites.findIndex(x => x.location.name === current.location.name);
