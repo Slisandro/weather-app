@@ -31,9 +31,9 @@
 
 <a  href="https://weather-sl.vercel.app/">View Demo</a>
 ·
-<a  href="https://weather-sl.vercel.app/issues">Report Bug</a>
+<a  href="https://github.com/Slisandro/weather-app/issues">Report Bug</a>
 ·
-<a  href="https://weather-sl.vercel.app/issues">Request Feature</a>
+<a  href="https://github.com/Slisandro/weather-app/issues">Request Feature</a>
 </p>
 
 </div>
@@ -77,11 +77,11 @@ To get a local copy up and running follow these simple example steps.
 
 This is an example of how to list things you need to use the software and how to install them.
 
-* npm
+* pnpm
 
 ```sh
 
-npm install npm@latest -g
+npm install pnpm@latest -g
 
 ```
 
