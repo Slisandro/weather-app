@@ -14,7 +14,7 @@ export default async function App() {
   const forecast = await fetchForecast();
 
   return (
-    <main className="flex h-screen w-screen items-center justify-between max-w-[100vw] lg:max-w-[98vw] max-h-[max-content] lg:max-h-[100vh]">
+    <main className="flex h-screen w-screen items-center justify-between max-w-[100vw] lg:max-w-screen max-h-[max-content] lg:max-h-screen">
       <Home forecast={forecast} />
     </main>
   )
