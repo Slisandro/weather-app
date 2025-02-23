@@ -65,11 +65,11 @@ export default function Home({ forecast }: { forecast: ResponseForecast }) {
             />
             <Header />
             <section
-                style={{ width: width >= 1024 ? "calc(100% - 20rem)" : "100%" }}
+                style={{ width: "100%" }}
                 className="bg-[#100e1d] min-h-[90vh] lg:min-h-[100vh] flex flex-col lg:flex-row py-4"
             >
                 <div
-                    className="flex gap-4 px-4 mb-8 justify-end ml-auto hidden lg:flex mt-4"
+                    className="flex gap-4 px-4 mb-8 lg:mb-2 justify-end ml-auto hidden lg:flex mt-4"
                     style={{ display: width >= 1024 ? "flex" : "none" }}
                 >
                     <button
