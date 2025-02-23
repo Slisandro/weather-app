@@ -14,7 +14,7 @@ export default function Forecast() {
             <div className="flex w-auto lg:w-full gap-8 items-center justify-between px-0 lg:px-8 mx-8 lg:mx-0 lg:px-32 overflow-x-auto lg:overflow-x-hidden snap-x overflow-y-hidden snap-mandatory">
                 {
                     current?.forecast.forecastday.map((forecast, i) => (
-                        <div key={forecast.date} style={{ boxShadow: "5px 5px 2px rgba(0,0,0,.5)" }} className="bg-[#1e213a] flex flex-col snap-center items-center justify-between pb-8 pt-8 mb-8 mx-4 w-[25rem] lg:w-[max-content] overflow-x-auto gap-[2rem] h-[max-content] min-w-[18rem] lg:min-w-[13rem] lg:overflow-x-auto lg:max-w-[100%] lg:gap-4">
+                        <div key={forecast.date} style={{ boxShadow: "5px 5px 2px rgba(0,0,0,.5)" }} className="bg-[#1e213a] flex flex-col snap-center items-center justify-between pb-8 pt-8 mb-8 mx-4 lg:pb-2 lg:pt-2 lg:mb-0 w-[25rem] lg:w-[max-content] overflow-x-auto gap-4 h-[max-content] min-w-[18rem] lg:min-w-[13rem] lg:max-w-[100%] lg:gap-0 lg:py-2">
                             <p className="text-[#e7e7eb] font-semibold text-2xl lg:text-xl">
                                 {
                                     i === 0 ? "Now" :
@@ -23,8 +23,8 @@ export default function Forecast() {
                                 }</p>
                             <Image
                                 src={changeURL("https://" + forecast.day.condition.icon)}
-                                width={width >= 1024 ? 90 : 125}
-                                height={width >= 1024 ? 90 : 125}
+                                width={width >= 1024 ? 50 : 125}
+                                height={width >= 1024 ? 50 : 125}
                                 alt="icon_forecast"
                             />
                             <div className="flex items-center justify-between mx-4 gap-4 mt-8 lg:mt-0">
